@@ -1,0 +1,1 @@
+p = 1/2;q = 1/2;n_runs = 1e5;L = 1;walk = zeros(1,n_runs);origin = zeros(1,n_runs);for i = 1:100    for j = 1:n_runs        u = rand();        if u <= p            walk(j) = walk(j) + L;        else            walk(j) = walk(j) - L;        end        if walk(j) == 0            origin(j) = i;        end    endendhist(origin, n_runs/2 + 2);
